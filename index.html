@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daryl Tan — Full-Stack Software Engineer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="blob-bg" id="blobBg">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">DT<span class="dot">.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="hero-content reveal">
+    <p class="hero-tag">Hi, I'm</p>
+    <h1 class="hero-name">Daryl Tan</h1>
+    <h2 class="hero-role">
+      <span class="typed-text" id="typedText"></span><span class="cursor">|</span>
+    </h2>
+    <p class="hero-desc">
+      Building full-stack software that ships to real users — from live production
+      apps to self-taught deep dives into ML and cloud infrastructure.
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">View My Work</a>
+      <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    </div>
+    <div class="hero-socials">
+      <a href="mailto:daryltan001@gmail.com" target="_blank" rel="noopener">Email</a>
+      <a href="https://linkedin.com/in/daryltannn" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/daryltan2000" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+  <div class="scroll-indicator"><span></span></div>
+</section>
+
+<section class="section" id="about">
+  <div class="container">
+    <p class="section-label reveal">About Me</p>
+    <h2 class="section-title reveal">A bit about my journey</h2>
+    <div class="about-grid">
+      <p class="about-text reveal">
+        I'm a final-year <strong>BSc (Hons) Computing Science</strong> student at Singapore Institute
+        of Technology, in partnership with the University of Glasgow, specializing in IoT. Before that,
+        I completed a Diploma in Computer Engineering at Temasek Polytechnic. I care about building
+        software that's actually used by real people — not just demos — and I enjoy jumping into
+        unfamiliar territory, whether that's Kubernetes, PyTorch, or a new API, and coming out the
+        other side with something that works.
+      </p>
+      <div class="about-cards reveal">
+        <div class="mini-card">
+          <h3>3.84</h3>
+          <p>GPA / 5.00 at SIT/UofG</p>
+        </div>
+        <div class="mini-card">
+          <h3>6+</h3>
+          <p>Full-stack & ML projects shipped</p>
+        </div>
+        <div class="mini-card">
+          <h3>SMRT</h3>
+          <p>Software Engineering Internship</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="experience">
+  <div class="container">
+    <p class="section-label reveal">Experience</p>
+    <h2 class="section-title reveal">Where I've worked</h2>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <h3>Software Engineering Intern</h3>
+            <span class="timeline-date">Sep 2025 – Apr 2026</span>
+          </div>
+          <p class="timeline-company">SMRT Corporation Ltd</p>
+          <ul class="timeline-list">
+            <li>Built and shipped MRTreats, a full-stack food voucher platform embedded live in the Wink+ mobile app, using Next.js/React on the frontend and Node.js/Spring Boot on the backend.</li>
+            <li>Designed end-to-end Stripe payment infrastructure — revenue splitting, fraud prevention, and automated voucher recovery.</li>
+            <li>Built serverless backend services with Google Cloud Functions and Cloud Task Queue, secured with HMAC signing and JWT/JWKS authentication.</li>
+            <li>Worked within an Agile Scrum team — sprint planning, stand-ups, peer-reviewed pull requests.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="container">
+    <p class="section-label reveal">Featured Work</p>
+    <h2 class="section-title reveal">Projects I'm proud of</h2>
+    <div class="project-grid">
+
+      <div class="project-card reveal">
+        <div class="project-glow"></div>
+        <div class="project-tags">
+          <span>React Native</span><span>Supabase</span><span>TypeScript</span>
+        </div>
+        <h3>AI Food Buddy</h3>
+        <p>A solo-built, actively maintained food discovery app with an AI-powered "craving wizard" —
+        architected the full React Native frontend and Supabase/PostgreSQL backend end to end,
+        including edge functions, caching layers, and rate-limited API integrations.</p>
+        <a href="https://github.com/daryltan2000/react-native-food-ai-app" target="_blank" rel="noopener" class="project-link">View Repo →</a>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-glow"></div>
+        <div class="project-tags">
+          <span>React Native</span><span>SQL</span><span>Agile</span>
+        </div>
+        <h3>MyBusz</h3>
+        <p>A client-engaged real-time bus tracking app. Served as Scrum Master while diagnosing a
+        major database performance bottleneck — resolved via targeted indexing, cutting ETA query
+        response time by <strong>65–68%</strong>, verified through Postman benchmarking.</p>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-glow"></div>
+        <div class="project-tags">
+          <span>Python</span><span>PyTorch</span><span>Vision Transformer</span>
+        </div>
+        <h3>Brain MRI Tumor Classification</h3>
+        <p>Fine-tuned a Vision Transformer (ViT-B16) with pretrained ImageNet weights to classify
+        brain MRI scans into four tumour categories, achieving <strong>95.21% test accuracy</strong>
+        with a reproducible, seed-fixed training pipeline.</p>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-glow"></div>
+        <div class="project-tags">
+          <span>Kubernetes</span><span>Docker</span><span>RabbitMQ</span>
+        </div>
+        <h3>Cloud Content Moderator</h3>
+        <p>Designed and deployed a Kubernetes-orchestrated, containerized microservices architecture
+        for a content moderation API, with an async RabbitMQ pipeline enabling horizontal
+        auto-scaling based on real-time queue load.</p>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-glow"></div>
+        <div class="project-tags">
+          <span>Django</span><span>MySQL</span><span>Celery</span>
+        </div>
+        <h3>Pro-Track</h3>
+        <p>A full-stack project management system with role-based access across four user types,
+        async task reminders via Celery/Redis, and third-party Zoom API integration for in-app
+        meeting scheduling — built with a 8-member team.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="skills">
+  <div class="container">
+    <p class="section-label reveal">Toolbox</p>
+    <h2 class="section-title reveal">Skills & Technologies</h2>
+    <div class="skills-grid">
+      <div class="skill-group reveal">
+        <h3>Languages</h3>
+        <div class="skill-tags">
+          <span>Python</span><span>JavaScript</span><span>TypeScript</span><span>Java</span><span>Kotlin</span><span>C</span><span>SQL</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Frameworks</h3>
+        <div class="skill-tags">
+          <span>React</span><span>React Native</span><span>Next.js</span><span>Node.js</span><span>Spring Boot</span><span>Django</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Cloud & Infra</h3>
+        <div class="skill-tags">
+          <span>Google Cloud</span><span>Docker</span><span>Kubernetes</span><span>Supabase</span><span>Firebase</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Practices</h3>
+        <div class="skill-tags">
+          <span>Agile/Scrum</span><span>Clean Code</span><span>OOD</span><span>AI-Assisted Development</span><span>Secure Coding</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container contact-container">
+    <p class="section-label reveal">Get In Touch</p>
+    <h2 class="section-title reveal">Let's build something together</h2>
+    <p class="contact-desc reveal">
+      I'm actively looking for full-stack software engineering opportunities.
+      Feel free to reach out — I'd love to chat.
+    </p>
+    <div class="contact-buttons reveal">
+      <a href="mailto:daryltan001@gmail.com" class="btn btn-primary">daryltan001@gmail.com</a>
+      <a href="tel:+6591162727" class="btn btn-outline">+65 9116 2727</a>
+    </div>
+    <div class="contact-socials reveal">
+      <a href="https://linkedin.com/in/daryltannn" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/daryltan2000" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>Designed & built by Daryl Tan · <span id="year"></span></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
