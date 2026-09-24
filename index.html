@@ -3,8 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daryl Tan - Full-Stack Software Engineer</title>
+<title>Daryl Tan — Full-Stack Software Engineer</title>
+<meta name="description" content="Daryl Tan is a full-stack software engineer in Singapore. He shipped Stripe payments and voucher recovery for MRTreats inside the Wink+ app.">
+<meta name="theme-color" content="#0a0a0f">
+<link rel="canonical" href="https://daryltan2000.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Daryl Tan — Full-Stack Software Engineer">
+<meta property="og:description" content="Shipped payments for MRTreats inside Wink+. Based in Singapore, looking for software engineering roles.">
+<meta property="og:url" content="https://daryltan2000.github.io/">
+<meta property="og:image" content="https://daryltan2000.github.io/assets/profile.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 
@@ -24,7 +35,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -38,21 +49,31 @@
         <div class="avatar-fallback">DT</div>
       </div>
     </div>
-    <p class="hero-tag">Hi, I'm</p>
+    <p class="hero-tag">Singapore · open to roles</p>
     <h1 class="hero-name">Daryl Tan</h1>
-    <h2 class="hero-role">
-      <span class="typed-text" id="typedText"></span><span class="cursor">|</span>
-    </h2>
-    <p class="hero-desc">
-      I build full-stack software that ships to real users, from live production
-      apps to self-taught deep dives into ML and cloud infrastructure.
-    </p>
+    <h2 class="hero-role">Full-Stack Software Engineer</h2>
+    <div class="term">
+      <div class="term-bar" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+      <p class="term-line">
+        <span class="term-prompt" aria-hidden="true">~/portfolio %</span>
+        <span id="termTyped">I build full-stack software that ships to real users, from live production apps to self-taught deep dives into AI/ML and cloud infrastructure.</span><span class="term-cursor" aria-hidden="true"></span>
+      </p>
+    </div>
+    <script>
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const termTyped = document.getElementById('termTyped');
+        termTyped.dataset.full = termTyped.textContent;
+        termTyped.textContent = '';
+      }
+    </script>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">View My Work</a>
       <a href="#contact" class="btn btn-outline">Get In Touch</a>
     </div>
     <div class="hero-socials">
-      <a href="mailto:daryltan001@gmail.com" target="_blank" rel="noopener" aria-label="Email" class="social-icon">
+      <a href="mailto:daryltan001@gmail.com" aria-label="Email" class="social-icon">
         <svg viewBox="0 0 24 24" fill="none"><path d="M3 6.5C3 5.67 3.67 5 4.5 5h15c.83 0 1.5.67 1.5 1.5v11c0 .83-.67 1.5-1.5 1.5h-15C3.67 19 3 18.33 3 17.5v-11Z" stroke="currentColor" stroke-width="1.6"/><path d="M4 6.5 12 13l8-6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
       </a>
       <a href="https://linkedin.com/in/daryltannn" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
@@ -70,32 +91,14 @@
   <div class="container">
     <p class="section-label reveal">About Me</p>
     <h2 class="section-title reveal">A bit about my journey</h2>
-    <div class="about-grid">
-      <p class="about-text reveal">
-        I recently graduated with a <strong>BSc (Hons) in Computing Science</strong> from Singapore
-        Institute of Technology, in partnership with the University of Glasgow, specializing in IoT.
-        Before that, I completed a Diploma in Computer Engineering at Temasek Polytechnic. I care about
-        building software that's actually used by real people, not just demos, and I enjoy jumping into
-        unfamiliar territory, whether that's Kubernetes, PyTorch, or a new API, and coming out the
-        other side with something that works. Outside of code, I play football regularly and have
-        competed in team-based gaming tournaments, both of which sharpened how I communicate and
-        coordinate under pressure, skills I bring directly into sprint teams and pair programming.
-      </p>
-      <div class="about-cards reveal">
-        <div class="mini-card">
-          <h3>Graduate</h3>
-          <p>BSc Computing Science, Singapore Institute of Technology / University of Glasgow</p>
-        </div>
-        <div class="mini-card">
-          <h3>Diploma</h3>
-          <p>Computer Engineering, Temasek Poly</p>
-        </div>
-        <div class="mini-card">
-          <h3>SMRT Corportation Ltd</h3>
-          <p>Software Engineering Internship</p>
-        </div>
-      </div>
-    </div>
+    <p class="about-text reveal">
+      I graduated with a <strong>BSc (Hons) in Computing Science</strong> from Singapore
+      Institute of Technology, in partnership with the University of Glasgow, after a
+      Diploma in Computer Engineering at Temasek Polytechnic. I like shipping software
+      people actually use, and I'm comfortable picking up an unfamiliar stack until it
+      works. Outside of work I play football and have competed in team gaming tournaments,
+      which is mostly where I learned to communicate when the clock is running.
+    </p>
   </div>
 </section>
 
@@ -118,28 +121,7 @@
             <li>Developed RESTful backend APIs in Node.js/TypeScript and Spring Boot/Kotlin, implementing security patterns such as HMAC signing, JWT/JWKS authentication, and idempotency.</li>
             <li>Implemented location-based features using graph traversal and geospatial algorithms across a microservices architecture.</li>
             <li>Worked across the full stack, from database schema design to frontend auth flows and WebView-to-native deep linking.</li>
-            <li>Worked within an Agile Scrum team: sprint planning, stand-ups, peer-reviewed pull requests.</li>
           </ul>
-
-          <div class="logo-marquee">
-            <div class="logo-track">
-              <span class="tech-badge"><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/stripe/635BFF" alt="" onerror="this.parentElement.style.display='none'"></span>Stripe</span>
-              <span class="tech-badge"><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/googlecloud/4285F4" alt="" onerror="this.parentElement.style.display='none'"></span>Google Cloud</span>
-              <span class="tech-badge"><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/firebase/FFCA28" alt="" onerror="this.parentElement.style.display='none'"></span>Firebase</span>
-              <span class="tech-badge"><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/nodedotjs/339933" alt="" onerror="this.parentElement.style.display='none'"></span>Node.js</span>
-              <span class="tech-badge"><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/typescript/3178C6" alt="" onerror="this.parentElement.style.display='none'"></span>TypeScript</span>
-              <span class="tech-badge"><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/spring/6DB33F" alt="" onerror="this.parentElement.style.display='none'"></span>Spring Boot</span>
-              <span class="tech-badge"><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/kotlin/7F52FF" alt="" onerror="this.parentElement.style.display='none'"></span>Kotlin</span>
-              <span class="tech-badge"><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/stripe/635BFF" alt="" onerror="this.parentElement.style.display='none'"></span>Stripe</span>
-              <span class="tech-badge"><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/googlecloud/4285F4" alt="" onerror="this.parentElement.style.display='none'"></span>Google Cloud</span>
-              <span class="tech-badge"><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/firebase/FFCA28" alt="" onerror="this.parentElement.style.display='none'"></span>Firebase</span>
-              <span class="tech-badge"><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/nodedotjs/339933" alt="" onerror="this.parentElement.style.display='none'"></span>Node.js</span>
-              <span class="tech-badge"><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/typescript/3178C6" alt="" onerror="this.parentElement.style.display='none'"></span>TypeScript</span>
-              <span class="tech-badge"><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/spring/6DB33F" alt="" onerror="this.parentElement.style.display='none'"></span>Spring Boot</span>
-              <span class="tech-badge"><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/kotlin/7F52FF" alt="" onerror="this.parentElement.style.display='none'"></span>Kotlin</span>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
@@ -160,74 +142,59 @@
         </div>
         <div class="project-copy">
           <div class="project-tags">
-            <span>React Native</span><span>Supabase</span><span>Gemini</span>
+            <span><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/react/61DAFB" alt="" onerror="this.parentElement.style.display='none'"></span>React Native</span>
+            <span><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/supabase/3FCF8E" alt="" onerror="this.parentElement.style.display='none'"></span>Supabase</span>
+            <span><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/googlemaps/4285F4" alt="" onerror="this.parentElement.style.display='none'"></span>Google Maps</span>
+            <span><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/googlegemini/8E75B2" alt="" onerror="this.parentElement.style.display='none'"></span>Gemini</span>
           </div>
           <h3>SmartBite</h3>
-          <p class="project-intro">A food app I built and still run: say what you're craving, and it finds nearby restaurants that are open.</p>
+          <p class="project-intro">A solo-built food app I'm still actively shipping updates to. Google can find restaurants near you, but it doesn't know your tastebuds, SmartBite does.</p>
           <ul class="project-points">
-            <li>Craving wizard and a For You feed, shaped by diet, budget, mood, and how far you'll travel</li>
+            <li>Prototyped in Figma and interviewed friends on what actually drives their cravings, then built a craving wizard and a For You feed personalized by factors such as cuisine, weather, travel radius etc</li>
             <li>Gemini writes a reason for each pick, and it can only rank real Google Places results, so it never invents a restaurant</li>
-            <li>Per-user and global rate limits cap Google and Gemini spend, and if Gemini fails, the feed falls back to ranking by rating and reviews instead of coming back empty</li>
+            <li>Added a "Restaurant Roulette" game mode for group indecision, alongside per-user and global rate limits with a rating-based fallback so the feed never goes empty</li>
           </ul>
-          <a href="https://github.com/daryltan2000/react-native-food-ai-app" target="_blank" rel="noopener" class="project-link">View Repo &rarr;</a>
+          <!-- <a href="https://github.com/daryltan2000/react-native-food-ai-app" target="_blank" rel="noopener" class="project-link">View Repo &rarr;</a> -->
+        </div>
+      </div>
+
+      <div class="project-card project-card-feature reveal">
+        <div class="project-glow"></div>
+        <div class="project-shots">
+          <img src="assets/mybusz-eta.png" alt="MyBusz nearby screen with bus stops on a map and arrival times for services P411 and J30" width="1170" height="2532">
+          <img src="assets/mybusz-route.png" alt="MyBusz route screen for P411, Larkin Sentral to Kulai Terminal, with ETAs beside each stop" width="1170" height="2532">
+        </div>
+        <div class="project-copy">
+          <div class="project-tags">
+            <span><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/react/61DAFB" alt="" onerror="this.parentElement.style.display='none'"></span>React Native</span>
+            <span><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/mysql/316192" alt="" onerror="this.parentElement.style.display='none'"></span>MySQL</span>
+          </div>
+          <h3>MyBusz</h3>
+          <p class="project-note">Client project · Larkin Sentral</p>
+          <p class="project-intro">Mobile developer and Scrum Master on a client project: a React Native app for real-time bus tracking, search, and bookmarks.</p>
+          <ul class="project-points">
+            <li>Prototyped the UI in Figma, then ran a Google Form to see which features people actually wanted before we picked a direction</li>
+            <li>Reworked a limited third-party API into our own backend, improving average query time by up to <strong>20%</strong></li>
+            <li>Indexed the ETA table after it became the bottleneck, cutting query time by <strong>65–68%</strong>, checked in Postman</li>
+          </ul>
         </div>
       </div>
 
       <div class="project-card reveal">
         <div class="project-glow"></div>
         <div class="project-tags">
-          <span>React Native</span><span>SQL</span><span>Agile</span>
-        </div>
-        <h3>MyBusz</h3>
-        <p class="project-intro">A client-engaged real-time bus tracking app built with an agile team.</p>
-        <ul class="project-points">
-          <li>Served as Scrum Master and Mobile Developer, running sprints and client demos</li>
-          <li>Diagnosed a major database performance bottleneck</li>
-          <li>Resolved it via targeted indexing, cutting ETA query response time by <strong>65-68%</strong>, verified through Postman benchmarking</li>
-        </ul>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-glow"></div>
-        <div class="project-tags">
-          <span>Python</span><span>PyTorch</span><span>Vision Transformer</span>
+          <span><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/python/3776AB" alt="" onerror="this.parentElement.style.display='none'"></span>Python</span>
+          <span><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/pytorch/EE4C2C" alt="" onerror="this.parentElement.style.display='none'"></span>PyTorch</span>
+          <span>Vision Transformer</span>
         </div>
         <h3>Brain MRI Tumor Classification</h3>
-        <p class="project-intro">A deep learning project classifying brain MRI scans into tumour types.</p>
+        <p class="project-note">Coursework</p>
+        <p class="project-intro">Classified brain MRI scans into four tumour types at <strong>95.21% test accuracy</strong>.</p>
         <ul class="project-points">
-          <li>Fine-tuned a Vision Transformer (ViT-B16) with pretrained ImageNet weights</li>
-          <li>Achieved <strong>95.21% test accuracy</strong> across four tumour categories</li>
-          <li>Built a reproducible, seed-fixed training pipeline with data augmentation</li>
+          <li>Fine-tuned a Vision Transformer (ViT-B16) from ImageNet weights</li>
+          <li>Kept the run reproducible: fixed seeds and data augmentation, so the accuracy number can be re-run</li>
         </ul>
       </div>
-
-      <!-- <div class="project-card reveal">
-        <div class="project-glow"></div>
-        <div class="project-tags">
-          <span>Kubernetes</span><span>Docker</span><span>RabbitMQ</span>
-        </div>
-        <h3>Cloud Content Moderator</h3>
-        <p class="project-intro">A cloud-native content moderation API built as a distributed systems project.</p>
-        <ul class="project-points">
-          <li>Designed a Kubernetes-orchestrated, containerized microservices architecture</li>
-          <li>Built an async RabbitMQ pipeline to decouple moderation from AI processing</li>
-          <li>Enabled horizontal auto-scaling based on real-time queue load</li>
-        </ul>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-glow"></div>
-        <div class="project-tags">
-          <span>Django</span><span>MySQL</span><span>Celery</span>
-        </div>
-        <h3>Pro-Track</h3>
-        <p class="project-intro">A full-stack project management system built with an 8-member team.</p>
-        <ul class="project-points">
-          <li>Implemented role-based access control across four user types</li>
-          <li>Added async task reminders via Celery and Redis</li>
-          <li>Integrated the Zoom API for in-app meeting scheduling</li>
-        </ul>
-      </div> -->
 
     </div>
   </div>
@@ -246,8 +213,8 @@
           <span class="tech-badge"><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/typescript/3178C6" alt="" onerror="this.parentElement.style.display='none'"></span>TypeScript</span>
           <span class="tech-badge"><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/java/ED8B00" alt="" onerror="this.parentElement.style.display='none'"></span>Java</span>
           <span class="tech-badge"><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/kotlin/7F52FF" alt="" onerror="this.parentElement.style.display='none'"></span>Kotlin</span>
-          <span class="tech-badge">C</span>
-          <span class="tech-badge">SQL</span>
+          <span class="tech-badge"><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/c/A8B9CC" alt="" onerror="this.parentElement.style.display='none'"></span>C</span>
+          <span class="tech-badge"><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/mysql/316192" alt="" onerror="this.parentElement.style.display='none'"></span>SQL</span>
         </div>
       </div>
       <div class="skill-group reveal">
@@ -269,12 +236,7 @@
           <span class="tech-badge"><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="" onerror="this.parentElement.style.display='none'"></span>Kubernetes</span>
           <span class="tech-badge"><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/supabase/3FCF8E" alt="" onerror="this.parentElement.style.display='none'"></span>Supabase</span>
           <span class="tech-badge"><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/firebase/FFCA28" alt="" onerror="this.parentElement.style.display='none'"></span>Firebase</span>
-        </div>
-      </div>
-      <div class="skill-group reveal">
-        <h3>Practices</h3>
-        <div class="skill-tags">
-          <span>Agile/Scrum</span><span>Clean Code</span><span>OOD</span><span>AI-Assisted Development</span><span>Secure Coding</span>
+          <span class="tech-badge"><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/github/181717" alt="" onerror="this.parentElement.style.display='none'"></span>Github</span>
         </div>
       </div>
     </div>
@@ -286,8 +248,8 @@
     <p class="section-label reveal">Get In Touch</p>
     <h2 class="section-title reveal">Let's build something together</h2>
     <p class="contact-desc reveal">
-      I'm actively looking for software engineering opportunities.
-      Feel free to reach out, I'd love to chat.
+      Based in Singapore, looking for software engineering roles.
+      Email me and I'll send a resume.
     </p>
     <div class="contact-buttons reveal">
       <a href="mailto:daryltan001@gmail.com" class="btn btn-primary">daryltan001@gmail.com</a>
