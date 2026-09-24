@@ -146,6 +146,40 @@ body {
   padding: 100px 24px 60px;
 }
 .hero-content { max-width: 800px; text-align: center; }
+
+.avatar-wrap { display: flex; justify-content: center; margin-bottom: 24px; }
+.avatar-ring {
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-3), var(--accent-2));
+  background-size: 200% 200%;
+  animation: ringSpin 6s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+@keyframes ringSpin {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+.avatar-img, .avatar-fallback {
+  width: 132px; height: 132px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--bg);
+}
+.avatar-fallback {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text);
+  background: radial-gradient(circle at 30% 30%, rgba(124,92,255,0.4), var(--bg));
+}
+
 .hero-tag {
   color: var(--accent-3);
   font-weight: 600;
@@ -206,20 +240,27 @@ body {
   background: rgba(255,255,255,0.03);
 }
 .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(124,92,255,0.45); }
-.hero-socials {
+
+.hero-socials { display: flex; gap: 16px; justify-content: center; }
+.social-icon {
+  width: 44px; height: 44px;
+  border-radius: 50%;
   display: flex;
-  gap: 24px;
+  align-items: center;
   justify-content: center;
-}
-.hero-socials a {
+  border: 1px solid var(--card-border);
+  background: rgba(255,255,255,0.03);
   color: var(--text-dim);
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  border-bottom: 1px solid transparent;
   transition: all 0.25s ease;
 }
-.hero-socials a:hover { color: var(--accent-3); border-color: var(--accent-3); }
+.social-icon svg { width: 20px; height: 20px; }
+.social-icon:hover {
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-3));
+  border-color: transparent;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(124,92,255,0.4);
+}
 
 .scroll-indicator {
   position: absolute;
@@ -313,6 +354,37 @@ body {
 .timeline-list { padding-left: 20px; color: var(--text-dim); font-size: 0.95rem; }
 .timeline-list li { margin-bottom: 8px; }
 
+/* ---------- Logo Marquee ---------- */
+.logo-marquee {
+  margin-top: 24px;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.logo-track {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  animation: marqueeScroll 22s linear infinite;
+}
+.logo-marquee:hover .logo-track { animation-play-state: paused; }
+.logo-pill {
+  flex-shrink: 0;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--c, var(--accent-3));
+  background: color-mix(in srgb, var(--c, var(--accent-3)) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--c, var(--accent-3)) 40%, transparent);
+  white-space: nowrap;
+}
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* ---------- Projects ---------- */
 .project-grid {
   display: grid;
@@ -388,9 +460,7 @@ body {
 .contact-container { text-align: center; }
 .contact-desc { color: var(--text-dim); max-width: 480px; margin: 0 auto 32px; }
 .contact-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
-.contact-socials { display: flex; gap: 24px; justify-content: center; }
-.contact-socials a { color: var(--text-dim); text-decoration: none; font-weight: 500; transition: color 0.25s ease; }
-.contact-socials a:hover { color: var(--accent-3); }
+.contact-socials { display: flex; gap: 16px; justify-content: center; }
 
 /* ---------- Footer ---------- */
 .footer {
@@ -438,9 +508,11 @@ body {
   .timeline { padding-left: 24px; }
   .timeline::before { left: -24px; }
   .timeline-dot { left: -29px; }
+  .timeline-content { padding: 24px 20px; }
+  .avatar-ring { width: 110px; height: 110px; }
+  .avatar-img, .avatar-fallback { width: 102px; height: 102px; }
 }
 @media (max-width: 480px) {
   .hero-cta { flex-direction: column; width: 100%; }
   .btn { text-align: center; }
-  .hero-socials { gap: 16px; flex-wrap: wrap; }
 }
