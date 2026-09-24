@@ -461,6 +461,28 @@ body {
   transition: letter-spacing 0.25s ease;
 }
 .project-link:hover { letter-spacing: 0.5px; }
+.project-card-feature {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(220px, 380px) 1fr;
+  gap: 28px;
+  align-items: center;
+}
+.project-shots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+.project-shots img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  border: 1px solid var(--card-border);
+  display: block;
+}
+.project-copy { position: relative; z-index: 1; }
 
 /* ---------- Skills ---------- */
 .skills-grid {
@@ -539,6 +561,8 @@ body {
   .timeline-content { padding: 24px 20px; }
   .avatar-ring { width: 110px; height: 110px; }
   .avatar-img, .avatar-fallback { width: 102px; height: 102px; }
+  .project-card-feature { grid-template-columns: 1fr; }
+  .project-shots { max-width: 420px; }
 }
 @media (max-width: 480px) {
   .hero-cta { flex-direction: column; width: 100%; }
