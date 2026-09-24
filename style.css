@@ -354,6 +354,38 @@ body {
 .timeline-list { padding-left: 20px; color: var(--text-dim); font-size: 0.95rem; }
 .timeline-list li { margin-bottom: 8px; }
 
+/* ---------- Tech Badges (icon + label) ---------- */
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+.tech-badge:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  background: rgba(124,92,255,0.1);
+}
+.tech-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px; height: 20px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.92);
+  padding: 3px;
+  flex-shrink: 0;
+}
+.tech-icon { width: 100%; height: 100%; object-fit: contain; display: block; }
+
 /* ---------- Logo Marquee ---------- */
 .logo-marquee {
   margin-top: 24px;
@@ -366,20 +398,9 @@ body {
   display: flex;
   gap: 12px;
   width: max-content;
-  animation: marqueeScroll 22s linear infinite;
+  animation: marqueeScroll 24s linear infinite;
 }
 .logo-marquee:hover .logo-track { animation-play-state: paused; }
-.logo-pill {
-  flex-shrink: 0;
-  padding: 8px 18px;
-  border-radius: 999px;
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--c, var(--accent-3));
-  background: color-mix(in srgb, var(--c, var(--accent-3)) 14%, transparent);
-  border: 1px solid color-mix(in srgb, var(--c, var(--accent-3)) 40%, transparent);
-  white-space: nowrap;
-}
 @keyframes marqueeScroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -424,7 +445,14 @@ body {
   font-weight: 600;
 }
 .project-card h3 { font-size: 1.4rem; margin-bottom: 12px; }
-.project-card p { color: var(--text-dim); font-size: 0.92rem; margin-bottom: 16px; }
+.project-intro { color: var(--text-dim); font-size: 0.92rem; margin-bottom: 14px; }
+.project-points {
+  padding-left: 18px;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+.project-points li { margin-bottom: 6px; }
 .project-link {
   color: var(--accent-3);
   text-decoration: none;
@@ -442,7 +470,7 @@ body {
 }
 .skill-group h3 { font-size: 1.1rem; margin-bottom: 16px; color: var(--accent-3); }
 .skill-tags { display: flex; flex-wrap: wrap; gap: 10px; }
-.skill-tags span {
+.skill-tags > span:not(.tech-badge) {
   padding: 8px 16px;
   border-radius: 999px;
   background: var(--card-bg);
@@ -450,7 +478,7 @@ body {
   font-size: 0.85rem;
   transition: all 0.25s ease;
 }
-.skill-tags span:hover {
+.skill-tags > span:not(.tech-badge):hover {
   background: var(--accent);
   border-color: var(--accent);
   transform: translateY(-2px);
