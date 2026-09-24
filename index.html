@@ -152,19 +152,25 @@
     <h2 class="section-title reveal">Projects I'm proud of</h2>
     <div class="project-grid">
 
-      <div class="project-card reveal">
+      <div class="project-card project-card-feature reveal">
         <div class="project-glow"></div>
-        <div class="project-tags">
-          <span>React Native</span><span>Supabase</span><span>TypeScript</span>
+        <div class="project-shots">
+          <img src="assets/smartbite-home.webp" alt="SmartBite home screen with a For You pick for Hitoyoshi Izakaya" width="540" height="1169">
+          <img src="assets/smartbite-craving.webp" alt="SmartBite craving sheet with chips for spicy noodles, soupy food, and a guided flow" width="540" height="1169">
         </div>
-        <h3>SmartBite</h3>
-        <p class="project-intro">A solo-built, actively maintained food discovery app with an AI-powered craving wizard.</p>
-        <ul class="project-points">
-          <li>Architected the full React Native frontend and Supabase/PostgreSQL backend end to end</li>
-          <li>Built Supabase edge functions to power AI-driven recommendations</li>
-          <li>Added caching layers and rate-limited API integrations to control cost</li>
-        </ul>
-        <a href="https://github.com/daryltan2000/react-native-food-ai-app" target="_blank" rel="noopener" class="project-link">View Repo &rarr;</a>
+        <div class="project-copy">
+          <div class="project-tags">
+            <span>React Native</span><span>Supabase</span><span>Gemini</span>
+          </div>
+          <h3>SmartBite</h3>
+          <p class="project-intro">A food app I built and still run: say what you're craving, and it finds nearby restaurants that are open.</p>
+          <ul class="project-points">
+            <li>Craving wizard and a For You feed, shaped by diet, budget, mood, and how far you'll travel</li>
+            <li>Gemini writes a reason for each pick, and it can only rank real Google Places results, so it never invents a restaurant</li>
+            <li>Per-user and global rate limits cap Google and Gemini spend, and if Gemini fails, the feed falls back to ranking by rating and reviews instead of coming back empty</li>
+          </ul>
+          <a href="https://github.com/daryltan2000/react-native-food-ai-app" target="_blank" rel="noopener" class="project-link">View Repo &rarr;</a>
+        </div>
       </div>
 
       <div class="project-card reveal">
