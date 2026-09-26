@@ -509,6 +509,36 @@ body {
   display: block;
 }
 .project-copy { position: relative; z-index: 1; }
+.project-card-feature.project-card-diagram {
+  grid-template-columns: 1fr;
+}
+.project-diagram { margin: 4px 0 18px; }
+.project-diagram img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  background: #fff;
+}
+.project-card-feature.project-card-charts {
+  grid-template-columns: 1fr;
+}
+.project-charts {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+  gap: 12px;
+  align-items: start;
+  margin: 4px 0 18px;
+}
+.project-charts img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  background: #fff;
+}
+.project-charts .chart-split { display: none; }
+.project-card-charts .project-copy { min-width: 0; }
 
 /* ---------- Skills ---------- */
 .skills-grid {
@@ -575,6 +605,26 @@ body {
   .avatar-img, .avatar-fallback { width: 102px; height: 102px; }
   .project-card-feature { grid-template-columns: 1fr; }
   .project-shots { max-width: 420px; }
+  .project-charts {
+    display: flex;
+    grid-template-columns: none;
+    gap: 12px;
+    width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .project-charts .chart-curves { display: none; }
+  .project-charts .chart-split { display: block; }
+  .project-charts img {
+    width: 82%;
+    height: auto;
+    flex: 0 0 82%;
+    max-width: none;
+    scroll-snap-align: start;
+  }
 }
 @media (max-width: 480px) {
   .hero-cta { flex-direction: column; width: 100%; }

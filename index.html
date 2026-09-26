@@ -137,7 +137,7 @@
       <div class="project-card project-card-feature reveal">
         <div class="project-glow"></div>
         <div class="project-shots">
-          <img src="assets/smartbite-home.webp" alt="SmartBite home screen with a For You pick for Hitoyoshi Izakaya" width="540" height="1169">
+          <img src="assets/smartbite-home.png" alt="SmartBite home screen with a For You pick for Hitoyoshi Izakaya" width="540" height="1169">
           <img src="assets/smartbite-craving.webp" alt="SmartBite craving sheet with chips for spicy noodles, soupy food, and a guided flow" width="540" height="1169">
         </div>
         <div class="project-copy">
@@ -180,20 +180,51 @@
         </div>
       </div>
 
-      <div class="project-card reveal">
+      <div class="project-card project-card-feature project-card-diagram reveal">
         <div class="project-glow"></div>
-        <div class="project-tags">
-          <span><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/python/3776AB" alt="" onerror="this.parentElement.style.display='none'"></span>Python</span>
-          <span><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/pytorch/EE4C2C" alt="" onerror="this.parentElement.style.display='none'"></span>PyTorch</span>
-          <span>Vision Transformer</span>
+        <div class="project-copy">
+          <div class="project-tags">
+            <span><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="" onerror="this.parentElement.style.display='none'"></span>Kubernetes</span>
+            <span><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/docker/2496ED" alt="" onerror="this.parentElement.style.display='none'"></span>Docker</span>
+            <span><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/rabbitmq/FF6600" alt="" onerror="this.parentElement.style.display='none'"></span>RabbitMQ</span>
+          </div>
+          <h3>Cloud Content Moderator</h3>
+          <p class="project-note">Coursework · Distributed Systems module, 6-person team</p>
+          <p class="project-intro">A content moderation API for video, image, audio, and text, built to scale under load without anyone babysitting it.</p>
+          <figure class="project-diagram">
+            <img src="assets/ccm-architecture.jpg" alt="Kubernetes cluster architecture: an NGINX API gateway routes requests to image, video, audio, and image moderation services, each with a message queue and scaled AI processing pods, backed by a persistent volume" width="1024" height="576">
+          </figure>
+          <ul class="project-points">
+            <li>Architected a Kubernetes-orchestrated microservices system behind an Nginx Ingress gateway, with independent services per media type</li>
+            <li>Decoupled moderation from AI processing with a RabbitMQ pipeline, so AI worker pods auto-scale horizontally based on real-time queue depth instead of running idle</li>
+            <li>Cut Docker rebuild time from over 10 minutes by switching to slim base images and minimizing layers for heavy dependencies like PyTorch and OpenCV, then load-tested the system to 100 concurrent users with JMeter</li>
+          </ul>
         </div>
-        <h3>Brain MRI Tumor Classification</h3>
-        <p class="project-note">Coursework</p>
-        <p class="project-intro">Classified brain MRI scans into four tumour types at <strong>95.21% test accuracy</strong>.</p>
-        <ul class="project-points">
-          <li>Fine-tuned a Vision Transformer (ViT-B16) from ImageNet weights</li>
-          <li>Kept the run reproducible: fixed seeds and data augmentation, so the accuracy number can be re-run</li>
-        </ul>
+      </div>
+
+      <div class="project-card project-card-feature project-card-charts reveal">
+        <div class="project-glow"></div>
+        <div class="project-copy">
+          <div class="project-tags">
+            <span><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/python/3776AB" alt="" onerror="this.parentElement.style.display='none'"></span>Python</span>
+            <span><span class="tech-icon-wrap"><img class="tech-icon" src="https://cdn.simpleicons.org/pytorch/EE4C2C" alt="" onerror="this.parentElement.style.display='none'"></span>PyTorch</span>
+            <span>Vision Transformer</span>
+          </div>
+          <h3>Brain MRI Tumor Classification</h3>
+          <p class="project-note">Coursework</p>
+          <p class="project-intro">Classified brain MRI scans into four tumour types at <strong>95.21% test accuracy</strong>.</p>
+          <div class="project-charts">
+            <img src="assets/mri-confusion-matrix.png" alt="Confusion matrix for glioma, meningioma, notumor, and pituitary predictions" width="585" height="455">
+            <img class="chart-curves" src="assets/mri-loss-accuracy.png" alt="Training and validation loss and accuracy curves across epochs" width="1024" height="422">
+            <img class="chart-split" src="assets/mri-loss.png" alt="Training and validation loss across epochs" width="512" height="422">
+            <img class="chart-split" src="assets/mri-accuracy.png" alt="Training and validation accuracy across epochs" width="512" height="422">
+          </div>
+          <ul class="project-points">
+            <li>Fine-tuned a Vision Transformer (ViT-B16) from ImageNet weights</li>
+            <li>Kept the run reproducible: fixed seeds and data augmentation, so the accuracy number can be re-run</li>
+            <li>Tuned learning rate and dropout through experimentation (1e-4 over 1e-3/5e-5, dropout 0.5 over 0.7), reaching F1-scores of 0.93–0.98 across all four tumor classes</li>
+          </ul>
+        </div>
       </div>
 
     </div>
