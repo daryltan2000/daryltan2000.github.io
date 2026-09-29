@@ -576,7 +576,7 @@ body {
   border-radius: 12px;
   background: #fff;
 }
-.project-charts figure { margin: 0; }
+.project-charts figure { margin: 0; min-width: 0; }
 .project-card-feature.project-card-charts {
   grid-template-columns: 1fr;
 }
@@ -685,6 +685,9 @@ body {
     flex: none;
     max-width: 100%;
   }
+}
+@media (min-width: 769px) {
+  .project-card-charts .shots-nav { display: none; }
 }
 @media (max-width: 480px) {
   .hero-cta { flex-direction: column; width: 100%; }

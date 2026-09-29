@@ -47,7 +47,9 @@ document.querySelectorAll('.project-shots-frame').forEach(frame => {
   const prev = frame.querySelector('.shots-prev');
   const next = frame.querySelector('.shots-next');
   const update = () => {
-    const max = scroller.scrollWidth - scroller.clientWidth;
+    const overflowX = getComputedStyle(scroller).overflowX;
+    const canScroll = overflowX === 'auto' || overflowX === 'scroll';
+    const max = canScroll ? scroller.scrollWidth - scroller.clientWidth : 0;
     const atStart = scroller.scrollLeft <= 2;
     const atEnd = scroller.scrollLeft >= max - 2;
     prev.hidden = atStart;
