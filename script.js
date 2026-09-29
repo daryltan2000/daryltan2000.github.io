@@ -42,6 +42,37 @@ window.addEventListener('scroll', () => {
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
+document.querySelectorAll('.project-shots-frame').forEach(frame => {
+  const scroller = frame.querySelector('.project-shots, .project-charts');
+  const prev = frame.querySelector('.shots-prev');
+  const next = frame.querySelector('.shots-next');
+  const update = () => {
+    const overflowX = getComputedStyle(scroller).overflowX;
+    const canScroll = overflowX === 'auto' || overflowX === 'scroll';
+    const max = canScroll ? scroller.scrollWidth - scroller.clientWidth : 0;
+    const atStart = scroller.scrollLeft <= 2;
+    const atEnd = scroller.scrollLeft >= max - 2;
+    prev.hidden = atStart;
+    next.hidden = atEnd || max <= 2;
+    frame.classList.toggle('can-prev', !atStart);
+    frame.classList.toggle('can-next', !atEnd && max > 2);
+  };
+  const step = () => {
+    const figure = scroller.querySelector('figure');
+    const gap = parseFloat(getComputedStyle(scroller).columnGap) || 0;
+    return figure ? figure.getBoundingClientRect().width + gap : scroller.clientWidth / 2;
+  };
+  prev.addEventListener('click', () => {
+    scroller.scrollBy({ left: -step(), behavior: reduceMotion ? 'auto' : 'smooth' });
+  });
+  next.addEventListener('click', () => {
+    scroller.scrollBy({ left: step(), behavior: reduceMotion ? 'auto' : 'smooth' });
+  });
+  scroller.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+});
+
 const termTyped = document.getElementById('termTyped');
 if (termTyped && termTyped.dataset.full && !reduceMotion) {
   const full = termTyped.dataset.full;
