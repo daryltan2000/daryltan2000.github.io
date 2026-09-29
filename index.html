@@ -136,10 +136,27 @@
 
       <div class="project-card project-card-feature reveal">
         <div class="project-glow"></div>
-        <div class="project-shots">
-          <img src="assets/smartbite-home.png" alt="SmartBite home screen with a For You pick for Hitoyoshi Izakaya" width="540" height="1169">
-          <img src="assets/smartbite-craving.webp" alt="SmartBite craving sheet with chips for spicy noodles, soupy food, and a guided flow" width="540" height="1169">
-          <img src="assets/smartbite-decide.png" alt="SmartBite Decide screen with Restaurant Roulette and Friend Roulette" width="473" height="1024">
+        <div class="project-shots-frame">
+          <div class="project-shots" tabindex="0" aria-label="SmartBite screens">
+            <figure>
+              <img src="assets/smartbite-home.png" alt="SmartBite home screen with a For You pick for Hitoyoshi Izakaya" width="540" height="1169">
+              <figcaption>For You</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/smartbite-craving.webp" alt="SmartBite craving sheet with chips for spicy noodles, soupy food, and a guided flow" width="540" height="1169">
+              <figcaption>Craving</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/smartbite-decide.png" alt="SmartBite Decide screen with Restaurant Roulette and Friend Roulette" width="473" height="1024">
+              <figcaption>Decide</figcaption>
+            </figure>
+          </div>
+          <button type="button" class="shots-nav shots-prev" aria-label="Previous screens" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5.5 8 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button type="button" class="shots-nav shots-next" aria-label="Next screens">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5.5 16 12l-6.5 6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
         <div class="project-copy">
           <div class="project-tags">
@@ -161,10 +178,27 @@
 
       <div class="project-card project-card-feature reveal">
         <div class="project-glow"></div>
-        <div class="project-shots">
-          <img src="assets/mybusz-route.png" alt="MyBusz nearby screen with bus stops on a map and arrival times for services P411 and J30" width="1170" height="2532">
-          <img src="assets/mybusz-eta.png" alt="MyBusz route screen for P411, Larkin Sentral to Kulai Terminal, with ETAs beside each stop" width="1170" height="2532">
-          <img src="assets/mybusz-search.png" alt="MyBusz search screen listing bus services such as J13, J16, and J30" width="473" height="1024">
+        <div class="project-shots-frame">
+          <div class="project-shots" tabindex="0" aria-label="MyBusz screens">
+            <figure>
+              <img src="assets/mybusz-route.png" alt="MyBusz nearby screen with bus stops on a map and arrival times for services P411 and J30" width="1170" height="2532">
+              <figcaption>Nearby</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/mybusz-eta.png" alt="MyBusz route screen for P411, Larkin Sentral to Kulai Terminal, with ETAs beside each stop" width="1170" height="2532">
+              <figcaption>Route</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/mybusz-search.png" alt="MyBusz search screen listing bus services such as J13, J16, and J30" width="473" height="1024">
+              <figcaption>Search</figcaption>
+            </figure>
+          </div>
+          <button type="button" class="shots-nav shots-prev" aria-label="Previous screens" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5.5 8 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button type="button" class="shots-nav shots-next" aria-label="Next screens">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5.5 16 12l-6.5 6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
         <div class="project-copy">
           <div class="project-tags">
@@ -195,6 +229,7 @@
           <p class="project-intro">A content moderation API for video, image, audio, and text, built to scale under load without anyone babysitting it.</p>
           <figure class="project-diagram">
             <img src="assets/ccm-architecture.jpg" alt="Kubernetes cluster architecture: an NGINX API gateway routes requests to image, video, audio, and image moderation services, each with a message queue and scaled AI processing pods, backed by a persistent volume" width="1024" height="576">
+            <figcaption>Architecture</figcaption>
           </figure>
           <ul class="project-points">
             <li>Architected a Kubernetes-orchestrated microservices system behind an Nginx Ingress gateway, with independent services per media type</li>
@@ -215,11 +250,31 @@
           <h3>Brain MRI Tumor Classification</h3>
           <p class="project-note">Coursework</p>
           <p class="project-intro">Classified brain MRI scans into four tumour types at <strong>95.21% test accuracy</strong>.</p>
-          <div class="project-charts">
-            <img src="assets/mri-confusion-matrix.png" alt="Confusion matrix for glioma, meningioma, notumor, and pituitary predictions" width="585" height="455">
-            <img class="chart-curves" src="assets/mri-loss-accuracy.png" alt="Training and validation loss and accuracy curves across epochs" width="1024" height="422">
-            <img class="chart-split" src="assets/mri-loss.png" alt="Training and validation loss across epochs" width="512" height="422">
-            <img class="chart-split" src="assets/mri-accuracy.png" alt="Training and validation accuracy across epochs" width="512" height="422">
+          <div class="project-shots-frame">
+            <div class="project-charts" tabindex="0" aria-label="Brain MRI charts">
+              <figure>
+                <img src="assets/mri-confusion-matrix.png" alt="Confusion matrix for glioma, meningioma, notumor, and pituitary predictions" width="585" height="455">
+                <figcaption>Confusion matrix</figcaption>
+              </figure>
+              <figure class="chart-curves">
+                <img src="assets/mri-loss-accuracy.png" alt="Training and validation loss and accuracy curves across epochs" width="1024" height="422">
+                <figcaption>Loss and accuracy</figcaption>
+              </figure>
+              <figure class="chart-split">
+                <img src="assets/mri-loss.png" alt="Training and validation loss across epochs" width="512" height="422">
+                <figcaption>Loss</figcaption>
+              </figure>
+              <figure class="chart-split">
+                <img src="assets/mri-accuracy.png" alt="Training and validation accuracy across epochs" width="512" height="422">
+                <figcaption>Accuracy</figcaption>
+              </figure>
+            </div>
+            <button type="button" class="shots-nav shots-prev" aria-label="Previous charts" hidden>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5.5 8 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button type="button" class="shots-nav shots-next" aria-label="Next charts">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5.5 16 12l-6.5 6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
           </div>
           <ul class="project-points">
             <li>Fine-tuned a Vision Transformer (ViT-B16) from ImageNet weights</li>

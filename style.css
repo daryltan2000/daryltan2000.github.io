@@ -494,6 +494,11 @@ body {
   gap: 28px;
   align-items: center;
 }
+.project-shots-frame {
+  position: relative;
+  min-width: 0;
+  z-index: 1;
+}
 .project-shots {
   display: flex;
   gap: 10px;
@@ -503,19 +508,62 @@ body {
   min-width: 0;
   scrollbar-width: thin;
   -webkit-overflow-scrolling: touch;
-  position: relative;
-  z-index: 1;
 }
-.project-shots img {
+.project-shots-frame.can-next .project-shots,
+.project-shots-frame.can-next .project-charts {
+  mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 36px), transparent);
+}
+.project-shots-frame.can-prev .project-shots,
+.project-shots-frame.can-prev .project-charts {
+  mask-image: linear-gradient(to left, #000 0, #000 calc(100% - 36px), transparent);
+}
+.project-shots figure {
   flex: 0 0 calc((100% - 10px) / 2);
   width: calc((100% - 10px) / 2);
   max-width: none;
-  height: auto;
+  margin: 0;
   scroll-snap-align: start;
+}
+.project-shots img {
+  width: 100%;
+  height: auto;
   border-radius: 18px;
   border: 1px solid var(--card-border);
   display: block;
 }
+.project-shots figcaption,
+.project-diagram figcaption,
+.project-charts figcaption {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.shots-nav {
+  position: absolute;
+  top: 42%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--card-border);
+  background: rgba(10, 10, 15, 0.88);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.shots-nav svg { width: 16px; height: 16px; display: block; }
+.shots-nav:hover { border-color: var(--accent); color: var(--accent-3); }
+.shots-prev { left: 4px; }
+.shots-next { right: 4px; }
+.shots-nav[hidden] { display: none; }
 .project-copy { position: relative; z-index: 1; }
 .project-card-feature.project-card-diagram {
   grid-template-columns: 1fr;
@@ -528,6 +576,7 @@ body {
   border-radius: 12px;
   background: #fff;
 }
+.project-charts figure { margin: 0; }
 .project-card-feature.project-card-charts {
   grid-template-columns: 1fr;
 }
@@ -625,12 +674,16 @@ body {
   }
   .project-charts .chart-curves { display: none; }
   .project-charts .chart-split { display: block; }
-  .project-charts img {
-    width: 82%;
-    height: auto;
+  .project-charts figure {
     flex: 0 0 82%;
+    width: 82%;
     max-width: none;
     scroll-snap-align: start;
+  }
+  .project-charts img {
+    width: 100%;
+    flex: none;
+    max-width: 100%;
   }
 }
 @media (max-width: 480px) {
