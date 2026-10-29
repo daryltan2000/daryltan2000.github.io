@@ -596,6 +596,10 @@ body {
 }
 .project-charts .chart-split { display: none; }
 .project-card-charts .project-copy { min-width: 0; }
+.project-card-feature.project-card-site { grid-template-columns: 1fr; }
+.project-card-site .project-copy { min-width: 0; }
+.project-card-site .project-shots-frame { margin: 4px 0 18px; }
+.project-card-site .project-shots img { border-radius: 12px; }
 
 /* ---------- Skills ---------- */
 .skills-grid {
@@ -684,6 +688,10 @@ body {
     width: 100%;
     flex: none;
     max-width: 100%;
+  }
+  .project-card-site .project-shots figure {
+    flex: 0 0 88%;
+    width: 88%;
   }
 }
 @media (min-width: 769px) {
